@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Research | Aakriti Jain</title>
+  <meta name="description" content="Research by Aakriti Jain on real-time, energy-efficient LPWANs for industrial IoT and cyber-physical systems."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://aakriti-jain.github.io/research.html"/>
+  <meta property="og:url" content="https://aakriti-jain.github.io/research.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Aakriti Jain | Real-Time LPWAN and Wireless IoT Systems"/>
+  <meta property="og:description" content="Research by Aakriti Jain on real-time, energy-efficient LPWANs for industrial IoT and cyber-physical systems."/>
+  <meta name="twitter:card" content="summary"/>
+  <link rel="icon" href="assets/utd-mark.svg"/>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <img src="assets/utd-mark.svg" alt="UTD mark"/>
+      <div class="brand-title">
+        <h1 class="name">Aakriti Jain</h1>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="service.html">Services</a>
+      <a href="awards.html">Awards</a>
+      <a href="teaching.html">Teaching</a>
+    </nav>
+  </div>
+</header>
+<main class="main">
+  <div class="layout layout-single">
+
+<section class="content">
+
+<div class="h3">Research</div>
+
+<p>My research asks how a low-power wireless network can deliver data on time, reliably, and within a tight energy budget when thousands of devices share one channel across several kilometers. Most of this work targets low-power wide-area networks (LPWANs), and LoRa in particular, which connect battery-powered and intermittently powered sensors to a gateway in industrial settings such as oil fields, smart grids, and remote process plants. Industrial wireless standards were built for short-range networks, and they do not carry over to this scale. I design protocols and scheduling methods that give LPWANs real-time behavior, and I validate them on real hardware.</p>
+
+<div class="h4">Real-Time Medium Access Control for LPWANs</div>
+
+<p>LoRa networks were designed for sporadic, delay-tolerant traffic, so they offer no notion of a deadline. RTPL is a real-time communication protocol for LoRa that exploits the ability of a gateway to receive on several channels in parallel, which improves the fraction of packets that meet their deadlines (IoTDI &rsquo;22; ACM TECS &rsquo;24). An event in an industrial plant often triggers many devices to report at once, and the resulting burst of traffic collides and misses deadlines exactly when timely data matters most. Burst-MAC coordinates this bursty traffic to reduce collisions during time-critical events (RTSS &rsquo;24). Both protocols are evaluated in NS-3 and on physical testbeds.</p>
+
+<div class="h4">Scheduling&ndash;Control Co-Design</div>
+
+<p>When an LPWAN carries the messages of a control loop, the network is part of that loop rather than a fixed delay. I co-design real-time scheduling and control for industrial CPS over LPWANs, combining schedulability analysis with adaptive sensor sampling so that control performance is optimized while every message still meets its deadline (ICCPS &rsquo;24; ACM TCPS &rsquo;26).</p>
+
+<div class="h4">Energy-Aware Communication</div>
+
+<p>Many IoT devices run on harvested energy stored in a supercapacitor, so they can transmit only when they hold enough charge. I developed methods that schedule charging and transmission together, using integer linear programming and online heuristics, so that such devices still communicate in a timely way (DCOSS-IoT &rsquo;26). For deployments where a gateway cannot reach every device, I also worked on latency-aware data harvesting with a mobile sink, with a 2-approximation guarantee on collection latency (RTAS &rsquo;26).</p>
+
+<div class="h4">Cross-Technology and Direct-to-Satellite Communication</div>
+
+<p>Long Range Frequency Hopping Spread Spectrum (LR-FHSS) extends LoRa&rsquo;s reach to tens of kilometers and to satellites in low Earth orbit, but it does not interoperate with the commodity LoRa receivers already deployed. We built cross-technology communication from LR-FHSS to commercial LoRa receivers (SenSys &rsquo;26). Building on this, I am developing per-message delivery certificates and signature-bound frame recovery for direct-to-satellite LR-FHSS, implemented with GNU Radio and a USRP.</p>
+
+<div class="h4">Machine-Learning-Based Scheduling</div>
+
+<p>I have also contributed to hierarchical multi-agent reinforcement learning for energy- and thermal-aware scheduling of parallel OpenMP workloads on multicore platforms (RTSS &rsquo;24 Brief Presentations).</p>
+
+<div class="h4">Where this goes next</div>
+
+<p>Going forward, I aim to extend timeliness, reliability, and energy guarantees to direct-to-satellite IoT and to 5G/6G IoT, where devices beyond terrestrial coverage and massive numbers of connected machines raise the same questions at a larger scale.</p>
+
+<div class="h4">Evaluation</div>
+
+<p>I build and measure real systems. My experiments use software-defined radio (SDR) prototypes on USRP B200 with GNU Radio, commercial off-the-shelf (COTS) LoRa nodes and gateways, and multi-node testbeds. At scale I use NS-3 simulation, PyTorch for the learning components, and Gurobi for optimization.</p>
+
+<p class="muted">The papers behind each part are listed on the <a href="publications.html">publications page</a>.</p>
+
+</section>
+
+  </div>
+</main>
+<div class="footer"></div>
+<script src="assets/site.js"></script>
+</body>
+</html>

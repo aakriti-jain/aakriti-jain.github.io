@@ -1,0 +1,232 @@
+:root{
+  --text:#111;
+  --muted:#333;
+  --link:#1a0dab;
+  --border:#e6e6e6;
+  --utd-orange:#E87500;
+  --utd-green:#1f7a1f;
+  --title-red:#c00000;
+  --max: 1180px;
+  --sidebar: 300px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background:#fff;
+  line-height:1.55;
+  font-size:16px;
+}
+
+a{ color: var(--link); text-decoration: underline; }
+a:hover{ color:#0b57d0; }
+
+.header{ border-bottom: 1px solid var(--border); background:#fff; }
+.header-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 18px 18px 14px 18px;
+  display:flex;
+  align-items:flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand{ display:flex; align-items:center; gap: 14px; }
+.brand img{ height: 52px; width: auto; display:block; }
+.brand-title .name{
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 16px;
+  align-items:center;
+  justify-content:flex-end;
+  padding-top: 6px;
+}
+.nav a{
+  color:#333;
+  text-decoration:none;
+  font-size: 16px;
+  padding: 6px 2px;
+}
+.nav a:hover{ text-decoration: underline; }
+.nav a.active{ font-weight: 700; color:#000; }
+
+.main{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 18px 18px 28px 18px;
+}
+
+.layout{ display:grid; grid-template-columns: var(--sidebar) 1fr; gap: 40px; }
+
+@media (max-width: 980px){
+  :root{ --sidebar: 1fr; }
+  .layout{ grid-template-columns: 1fr; gap: 24px; }
+  .header-inner{ flex-direction:column; }
+  .nav{ justify-content:flex-start; }
+}
+
+.sidebar{ padding-top: 8px;  font-size: 16px; }
+.headshot{
+  width: 170px; height: 170px;
+  object-fit: cover;
+  display:block;
+  border: 1px solid var(--border);
+  background:#f7f7f7;
+}
+.s-name{ margin-top: 18px; font-weight: 700; font-size: 18px; }
+.s-title{ margin-top: 6px; font-size: 14px; color:#444; }
+
+.s-dept{ margin-top: 18px; font-size: 16px; font-weight: 700; }
+.s-dept a{ color: var(--utd-green); text-decoration: underline; }
+.s-univ{ margin-top: 10px; font-size: 22px; font-weight: 700; }
+.s-univ a{ color: var(--utd-orange); text-decoration: none; }
+.s-univ a:hover{ text-decoration: underline; }
+
+.contact{ margin-top: 18px; font-size: 14px; }
+.contact .row{ margin-top: 10px; }
+.label{ font-weight: 700; }
+
+.addr{ margin-top: 14px; color:#444; font-size: 14px; line-height: 1.4; }
+
+/* CV / Resume links on homepage sidebar */
+.side-docs{
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.side-docs a{
+  display:block;
+  margin-top: 8px;
+  color:#333;
+  text-decoration:none;
+  font-size: 15px;
+}
+.side-docs a:hover{ text-decoration: underline; }
+
+.side-links{ margin-top: 16px; }
+.side-links a{ display:block; margin-top: 12px; font-size: 16px; }
+
+.content p{ margin: 14px 0; color:#222; }
+
+.banner{
+  width: 100%;
+  height: 180px;
+  border: 1px solid var(--border);
+  object-fit: cover;
+  background:#f2f2f2;
+  display:block;
+  margin-bottom: 14px;
+}
+
+.h3{ margin-top: 18px; font-weight: 700; color: var(--title-red); font-size: 16px; }
+.h4{ margin-top: 16px; font-weight: 700; font-size: 15px; }
+
+ul{ margin: 10px 0 0 18px; padding: 0; }
+li{ margin: 7px 0; }
+
+.pub-year{ margin-top: 18px; font-weight: 700; }
+.pub-list{ margin-top: 8px; }
+
+/* Paper title links: black instead of the site link blue.
+   Underline is inherited from the base `a` rule so they still read as links. */
+.pub-list a{ color:#000; }
+.pub-list a:hover{ color:#000; }
+
+/* Job market notice. It is a direct child of .layout and spans both columns,
+   so it stays at the top of the page when the grid collapses on narrow screens. */
+.job-market{
+  grid-column: 1 / -1;
+  margin: 0 0 -16px 0;
+  padding: 12px 14px;
+  border: 1px solid var(--utd-orange);
+  border-left: 5px solid var(--utd-orange);
+  background: #fff7ef;
+  color: #7a3d00;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.footer{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px 18px 26px 18px;
+  color:#666;
+  font-size: 13px;
+  border-top: 1px solid var(--border);
+}
+
+/* Icon links (Scholar, LinkedIn) */
+.icon-links{
+  margin-top: 16px;
+  display:flex;
+  gap: 10px;
+  align-items:center;
+}
+.icon-link{ display:inline-flex; align-items:center; justify-content:center; 
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  text-decoration:none;
+ padding: 0; }
+.icon-link img{ width: 30px; height: 30px; display:block; }
+.icon-link:hover{ background:#f7f7f7; }
+
+/* Teaching page formatting */
+.teaching-list{ margin-top: 10px; }
+.teaching-list li{
+  margin: 14px 0;
+}
+.muted{ color:#444; }
+
+
+/* Teaching formatting */
+.teaching-list{ margin-top: 10px; }
+.teaching-list li{ margin: 16px 0; }
+.t-head{
+  display:flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+}
+.t-years{ color:#444; }
+.t-org{ margin-top: 3px; color:#222; }
+.t-courses{ margin-top: 3px; color:#222; }
+.t-label{ font-weight: 700; }
+
+
+/* Override: center and enlarge social icons */
+.icon-link{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width: 34px !important;
+  height: 34px !important;
+  padding: 0 !important;
+}
+.icon-link img{
+  width: 32px !important;
+  height: 32px !important;
+  display:block !important;
+  margin: 0 !important;
+}
+
+
+/* Single-column layout (no sidebar) */
+.layout.layout-single{ grid-template-columns: 1fr; gap: 0; }
+
+.sidebar a{ font-size: 16px; }
