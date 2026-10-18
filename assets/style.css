@@ -243,3 +243,6 @@ li.award-feature{
   line-height: 1.6;
 }
 .pub-award{ color: var(--title-red); font-weight: 700; }
+
+.t-bullets{ margin: 4px 0 0 18px; }
+.t-bullets li{ margin: 3px 0; color:#222; }
