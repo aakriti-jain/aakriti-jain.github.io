@@ -233,13 +233,6 @@ li{ margin: 7px 0; }
 
 
 /* Featured award: news item, awards page entry, publication tag */
-li.news-award{
-  list-style: none;
-  margin-left: -18px;
-  padding: 10px 14px;
-  border-left: 5px solid var(--utd-orange);
-  background: #fff7ef;
-}
 li.award-feature{
   list-style: none;
   margin: 10px 0 16px -18px;
